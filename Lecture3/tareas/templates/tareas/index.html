@@ -1,0 +1,13 @@
+{% extends "tareas/layout.html" %}
+
+{% block body %}
+    <h1> Tareas </h1>
+    <ul>
+        {% for elemento in tareas %}
+            <li>{{ elemento}}</li>
+        {% empty %}
+            <li>No tasks.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'tareas:add' %}">Add a New Tasks</a>
+{% endblock %}
